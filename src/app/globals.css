@@ -16,3 +16,13 @@ body {
   background: var(--color-dark);
   color: white;
 }
+
+@keyframes shine {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245, 166, 35, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(245, 166, 35, 0.3); }
+}

@@ -21,12 +21,27 @@
     "price": "Competitive Price",
     "priceDesc": "Affordable solutions without compromise"
   },
+  "stats": {
+    "projectsLabel": "Projects Completed",
+    "yearsLabel": "Years Experience",
+    "satisfactionLabel": "Satisfied Clients",
+    "deliveryLabel": "Weeks Delivery"
+  },
   "offers": {
     "title": "What We Offer",
     "housing": "Housing",
+    "housingDesc": "Containers transformed into modern, comfortable homes",
     "offices": "Offices",
+    "officesDesc": "Professional workspaces, ready to use",
     "storage": "Storage",
-    "custom": "Custom"
+    "storageDesc": "Secure and durable storage solutions",
+    "custom": "Custom",
+    "customDesc": "Unique projects, tailored to your vision"
+  },
+  "cta": {
+    "title": "Ready to Build?",
+    "subtitle": "Call us now for a free consultation",
+    "button": "Call Now"
   },
   "recentProjects": {
     "title": "Recent Projects",
@@ -46,7 +61,10 @@
     "phone": "Phone",
     "email": "Email",
     "address": "Address",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "tagline": "Premium quality modular containers. Building the future, module by module."
   },
   "gallery": {
     "title": "Our Gallery",

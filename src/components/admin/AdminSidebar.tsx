@@ -70,9 +70,9 @@ export default function AdminSidebar() {
             <Image
               src="/logo.png"
               alt="BOXPRO"
-              width={130}
-              height={36}
-              className="h-9 w-auto"
+              width={150}
+              height={42}
+              className="h-10 w-auto brightness-[1.8] contrast-[1.1]"
             />
             <span className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded">
               Admin

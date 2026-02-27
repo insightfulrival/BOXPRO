@@ -21,12 +21,27 @@
     "price": "Pret Competitiv",
     "priceDesc": "Solutii accesibile fara compromisuri"
   },
+  "stats": {
+    "projectsLabel": "Proiecte Finalizate",
+    "yearsLabel": "Ani Experienta",
+    "satisfactionLabel": "Clienti Multumiti",
+    "deliveryLabel": "Saptamani Livrare"
+  },
   "offers": {
     "title": "Ce Oferim",
     "housing": "Locuinte",
+    "housingDesc": "Containere transformate in case moderne si confortabile",
     "offices": "Birouri",
+    "officesDesc": "Spatii de lucru profesionale, gata de utilizare",
     "storage": "Depozite",
-    "custom": "Custom"
+    "storageDesc": "Solutii de depozitare sigure si durabile",
+    "custom": "Custom",
+    "customDesc": "Proiecte unice, adaptate viziunii tale"
+  },
+  "cta": {
+    "title": "Gata sa Construim?",
+    "subtitle": "Suna-ne acum pentru o consultatie gratuita",
+    "button": "Suna Acum"
   },
   "recentProjects": {
     "title": "Proiecte Recente",
@@ -46,7 +61,10 @@
     "phone": "Telefon",
     "email": "Email",
     "address": "Adresa",
-    "rights": "Toate drepturile rezervate"
+    "rights": "Toate drepturile rezervate",
+    "navigation": "Navigare",
+    "contact": "Contact",
+    "tagline": "Containere modulare de calitate premium. Construim viitorul, modul cu modul."
   },
   "gallery": {
     "title": "Galeria Noastra",
