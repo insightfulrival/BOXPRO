@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -10,9 +11,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <span className="text-primary font-heading text-2xl font-bold">
-              BOXPRO
-            </span>
+            <Image
+              src="/logo.png"
+              alt="BOXPRO"
+              width={180}
+              height={50}
+              className="h-12 w-auto brightness-110"
+            />
             <p className="text-gray-medium mt-3 text-sm leading-relaxed">
               Containere modulare de calitate premium.
             </p>

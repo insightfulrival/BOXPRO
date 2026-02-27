@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function AdminSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -66,7 +67,13 @@ export default function AdminSidebar() {
         {/* Logo */}
         <div className="p-6 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <span className="text-2xl font-heading font-bold text-primary">BOXPRO</span>
+            <Image
+              src="/logo.png"
+              alt="BOXPRO"
+              width={130}
+              height={36}
+              className="h-9 w-auto"
+            />
             <span className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded">
               Admin
             </span>

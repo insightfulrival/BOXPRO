@@ -4,7 +4,34 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
+
+function FlagRO({ className = 'w-6 h-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 30 20" className={className}>
+      <rect width="10" height="20" fill="#002B7F" />
+      <rect x="10" width="10" height="20" fill="#FCD116" />
+      <rect x="20" width="10" height="20" fill="#CE1126" />
+    </svg>
+  );
+}
+
+function FlagEN({ className = 'w-6 h-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 30" className={className}>
+      <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+      <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+      <g clipPath="url(#s)">
+        <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+        <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t)" stroke="#C8102E" strokeWidth="4"/>
+        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10"/>
+        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6"/>
+      </g>
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,9 +56,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <span className="text-primary font-heading text-2xl font-bold tracking-tight">
-              BOXPRO
-            </span>
+            <Image
+              src="/logo.png"
+              alt="BOXPRO - Containere Modulare"
+              width={160}
+              height={45}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -46,28 +78,29 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Locale switcher */}
-            <div className="flex items-center gap-1 text-sm">
+            {/* Locale switcher with flags */}
+            <div className="flex items-center gap-2">
               <button
                 onClick={() => switchLocale('ro')}
-                className={`px-2 py-1 rounded cursor-pointer transition-colors ${
+                className={`p-1 rounded cursor-pointer transition-all ${
                   locale === 'ro'
-                    ? 'text-primary font-bold'
-                    : 'text-gray-medium hover:text-white'
+                    ? 'ring-2 ring-primary scale-110'
+                    : 'opacity-50 hover:opacity-100'
                 }`}
+                aria-label="Romana"
               >
-                RO
+                <FlagRO />
               </button>
-              <span className="text-gray-medium">/</span>
               <button
                 onClick={() => switchLocale('en')}
-                className={`px-2 py-1 rounded cursor-pointer transition-colors ${
+                className={`p-1 rounded cursor-pointer transition-all ${
                   locale === 'en'
-                    ? 'text-primary font-bold'
-                    : 'text-gray-medium hover:text-white'
+                    ? 'ring-2 ring-primary scale-110'
+                    : 'opacity-50 hover:opacity-100'
                 }`}
+                aria-label="English"
               >
-                EN
+                <FlagEN />
               </button>
             </div>
 
@@ -120,27 +153,29 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {/* Mobile locale switcher */}
-              <div className="flex items-center gap-2 text-sm">
+              {/* Mobile locale switcher with flags */}
+              <div className="flex items-center gap-3">
                 <button
                   onClick={() => switchLocale('ro')}
-                  className={`px-3 py-1.5 rounded cursor-pointer transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition-all ${
                     locale === 'ro'
-                      ? 'bg-primary text-dark font-bold'
-                      : 'text-gray-medium hover:text-white'
+                      ? 'bg-primary/10 ring-1 ring-primary'
+                      : 'opacity-60 hover:opacity-100'
                   }`}
                 >
-                  RO
+                  <FlagRO className="w-7 h-5" />
+                  <span className={`text-sm ${locale === 'ro' ? 'text-primary font-bold' : 'text-gray-medium'}`}>Romana</span>
                 </button>
                 <button
                   onClick={() => switchLocale('en')}
-                  className={`px-3 py-1.5 rounded cursor-pointer transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition-all ${
                     locale === 'en'
-                      ? 'bg-primary text-dark font-bold'
-                      : 'text-gray-medium hover:text-white'
+                      ? 'bg-primary/10 ring-1 ring-primary'
+                      : 'opacity-60 hover:opacity-100'
                   }`}
                 >
-                  EN
+                  <FlagEN className="w-7 h-5" />
+                  <span className={`text-sm ${locale === 'en' ? 'text-primary font-bold' : 'text-gray-medium'}`}>English</span>
                 </button>
               </div>
 
