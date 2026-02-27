@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+
+  --color-primary: #F5A623;
+  --color-primary-dark: #D4901E;
+  --color-dark: #0A0A0A;
+  --color-dark-lighter: #1A1A1A;
+  --color-gray-light: #F5F5F5;
+  --color-gray-medium: #888888;
+}
+
+body {
+  background: var(--color-dark);
+  color: white;
+}
