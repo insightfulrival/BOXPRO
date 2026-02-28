@@ -1,4 +1,10 @@
 {
+  "metadata": {
+    "title": "BOXPRO - Premium Modular Containers in Romania",
+    "description": "Premium quality modular containers for housing, offices and storage. Fast delivery, competitive prices and full customization.",
+    "galleryTitle": "Project Gallery",
+    "galleryDescription": "Discover our modular container projects: housing, offices, storage and custom solutions."
+  },
   "nav": {
     "home": "Home",
     "gallery": "Gallery",
@@ -7,8 +13,11 @@
   },
   "hero": {
     "title": "Modular Containers",
-    "subtitle": "Building the future, module by module",
-    "cta": "Call Now"
+    "subtitle": "Building the future together",
+    "cta": "Call Now",
+    "ctaEmail": "Send Email",
+    "phone": "0740 000 000",
+    "videoAlt": "BOXPRO modular containers showcase - housing, offices and storage"
   },
   "whyUs": {
     "title": "Why BOXPRO?",
@@ -41,7 +50,9 @@
   "cta": {
     "title": "Ready to Build?",
     "subtitle": "Call us now for a free consultation",
-    "button": "Call Now"
+    "button": "Call Now",
+    "buttonEmail": "Send Email",
+    "phone": "0740 000 000"
   },
   "recentProjects": {
     "title": "Recent Projects",
@@ -64,7 +75,7 @@
     "rights": "All rights reserved",
     "navigation": "Navigation",
     "contact": "Contact",
-    "tagline": "Premium quality modular containers. Building the future, module by module."
+    "tagline": "Premium quality modular containers. Building the future together."
   },
   "gallery": {
     "title": "Our Gallery",

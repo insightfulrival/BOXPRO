@@ -10,9 +10,51 @@ import Footer from '@/components/layout/Footer';
 import MobileCallButton from '@/components/layout/MobileCallButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 
-export default function Home() {
+const SITE_URL = 'https://boxpro.ro';
+
+function ProductJsonLd({ locale }: { locale: string }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name:
+      locale === 'ro'
+        ? 'Containere Modulare BOXPRO'
+        : 'BOXPRO Modular Containers',
+    description:
+      locale === 'ro'
+        ? 'Containere modulare de calitate premium pentru locuinte, birouri si depozite. Personalizabile, eficiente energetic, livrare rapida.'
+        : 'Premium quality modular containers for housing, offices and storage. Customizable, energy efficient, fast delivery.',
+    brand: { '@type': 'Brand', name: 'BOXPRO' },
+    category:
+      locale === 'ro' ? 'Containere Modulare' : 'Modular Containers',
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      lowPrice: '8000',
+      highPrice: '85000',
+      offerCount: '4',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <>
+      <ProductJsonLd locale={locale} />
       <Navbar />
       <main>
         <Hero />

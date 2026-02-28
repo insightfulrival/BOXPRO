@@ -1,4 +1,10 @@
 {
+  "metadata": {
+    "title": "BOXPRO - Containere Modulare Premium in Romania",
+    "description": "Containere modulare de calitate premium pentru locuinte, birouri si depozite. Livrare rapida, preturi competitive si personalizare completa.",
+    "galleryTitle": "Galerie Proiecte",
+    "galleryDescription": "Descopera proiectele noastre de containere modulare: locuinte, birouri, depozite si solutii personalizate."
+  },
   "nav": {
     "home": "Acasa",
     "gallery": "Galerie",
@@ -7,8 +13,11 @@
   },
   "hero": {
     "title": "Containere Modulare",
-    "subtitle": "Construim viitorul, modul cu modul",
-    "cta": "Suna Acum"
+    "subtitle": "Construim viitorul împreună",
+    "cta": "Suna Acum",
+    "ctaEmail": "Trimite Email",
+    "phone": "0740 000 000",
+    "videoAlt": "Prezentare containere modulare BOXPRO - locuinte, birouri si depozite"
   },
   "whyUs": {
     "title": "De ce BOXPRO?",
@@ -41,7 +50,9 @@
   "cta": {
     "title": "Gata sa Construim?",
     "subtitle": "Suna-ne acum pentru o consultatie gratuita",
-    "button": "Suna Acum"
+    "button": "Suna Acum",
+    "buttonEmail": "Trimite Email",
+    "phone": "0740 000 000"
   },
   "recentProjects": {
     "title": "Proiecte Recente",
@@ -64,7 +75,7 @@
     "rights": "Toate drepturile rezervate",
     "navigation": "Navigare",
     "contact": "Contact",
-    "tagline": "Containere modulare de calitate premium. Construim viitorul, modul cu modul."
+    "tagline": "Containere modulare de calitate premium. Construim viitorul împreună."
   },
   "gallery": {
     "title": "Galeria Noastra",

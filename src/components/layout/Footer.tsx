@@ -16,10 +16,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Image
               src="/logo.png"
-              alt="BOXPRO"
+              alt="BOXPRO - Containere Modulare Premium Romania"
               width={200}
               height={55}
-              className="h-12 w-auto brightness-[2] contrast-[1.15]"
+              className="h-12 w-auto"
             />
             <p className="text-gray-medium mt-4 text-sm leading-relaxed max-w-sm">
               {t('tagline')}

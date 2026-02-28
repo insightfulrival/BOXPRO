@@ -23,8 +23,8 @@ function AnimatedNumber({ value, suffix = '' }: { value: number; suffix: string 
 }
 
 const stats = [
-  { key: 'projects', value: 150, suffix: '+' },
-  { key: 'years', value: 10, suffix: '+' },
+  { key: 'projects', value: 27, suffix: '+' },
+  { key: 'years', value: 3, suffix: '+' },
   { key: 'satisfaction', value: 98, suffix: '%' },
   { key: 'delivery', value: 3, suffix: '' },
 ];

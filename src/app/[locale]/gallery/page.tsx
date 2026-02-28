@@ -4,6 +4,51 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import MobileCallButton from '@/components/layout/MobileCallButton';
 import type { Project } from '@/components/ui/ProjectCard';
+import type { Metadata } from 'next';
+
+const SITE_URL = 'https://boxpro.ro';
+
+const galleryMeta = {
+  ro: {
+    title: 'Galerie Proiecte | BOXPRO - Containere Modulare Finalizate',
+    description:
+      'Descopera proiectele BOXPRO finalizate: containere modulare transformate in locuinte moderne, birouri profesionale si depozite. Vezi portofoliul nostru complet.',
+  },
+  en: {
+    title: 'Project Gallery | BOXPRO - Completed Modular Containers',
+    description:
+      'Discover completed BOXPRO projects: modular containers transformed into modern homes, professional offices and storage units. View our complete portfolio.',
+  },
+} as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const m = galleryMeta[locale as keyof typeof galleryMeta] || galleryMeta.ro;
+
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/gallery`,
+      languages: {
+        ro: `${SITE_URL}/ro/gallery`,
+        en: `${SITE_URL}/en/gallery`,
+      },
+    },
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      url: `${SITE_URL}/${locale}/gallery`,
+      siteName: 'BOXPRO',
+      locale: locale === 'ro' ? 'ro_RO' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 async function fetchAllProjects(): Promise<Project[]> {
   try {

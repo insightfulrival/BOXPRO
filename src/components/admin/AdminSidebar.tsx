@@ -72,7 +72,7 @@ export default function AdminSidebar() {
               alt="BOXPRO"
               width={150}
               height={42}
-              className="h-10 w-auto brightness-[1.8] contrast-[1.1]"
+              className="h-10 w-auto"
             />
             <span className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded">
               Admin

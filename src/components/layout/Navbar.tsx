@@ -61,7 +61,7 @@ export default function Navbar() {
               alt="BOXPRO - Containere Modulare"
               width={280}
               height={75}
-              className="h-14 md:h-16 w-auto brightness-[2] contrast-[1.15]"
+              className="h-16 md:h-16 w-auto"
               priority
             />
           </Link>
