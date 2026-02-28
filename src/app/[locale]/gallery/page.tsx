@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import GalleryGrid from '@/components/gallery/GalleryGrid';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import MobileCallButton from '@/components/layout/MobileCallButton';
 import type { Project } from '@/components/ui/ProjectCard';
 import type { Metadata } from 'next';
 
@@ -104,7 +103,6 @@ export default async function GalleryPage() {
         </div>
       </main>
       <Footer />
-      <MobileCallButton />
     </>
   );
 }

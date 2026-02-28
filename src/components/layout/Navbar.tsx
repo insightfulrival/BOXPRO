@@ -190,9 +190,6 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <Button href="tel:+40700000000" variant="primary" className="mt-2">
-                {t('callNow')}
-              </Button>
             </div>
           </motion.div>
         )}

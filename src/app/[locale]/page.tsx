@@ -7,7 +7,6 @@ import CTASection from '@/components/landing/CTASection';
 import RecentProjects from '@/components/landing/RecentProjects';
 import HowItWorks from '@/components/landing/HowItWorks';
 import Footer from '@/components/layout/Footer';
-import MobileCallButton from '@/components/layout/MobileCallButton';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const SITE_URL = 'https://boxpro.ro';
@@ -66,7 +65,6 @@ export default async function Home({
         <HowItWorks />
       </main>
       <Footer />
-      <MobileCallButton />
       <ScrollToTop />
     </>
   );

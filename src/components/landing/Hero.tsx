@@ -81,15 +81,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              {/* Mobile: buton Suna Acum */}
-              <div className="md:hidden">
-                <Button href="tel:+40740000000" variant="primary" className="text-lg px-10 py-4">
-                  {t('cta')}
-                </Button>
-              </div>
-
-              {/* Desktop: buton Email + numar de telefon afisat */}
-              <div className="hidden md:block">
+              <div>
                 <Button href="mailto:contact@boxpro.ro" variant="primary" className="text-lg px-10 py-4">
                   {t('ctaEmail')}
                 </Button>
