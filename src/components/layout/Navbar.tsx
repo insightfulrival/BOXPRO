@@ -113,7 +113,8 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-3">
             <a
               href="tel:+40700000000"
-              className="p-2 rounded-lg bg-primary text-white"
+              className="p-2 rounded-lg text-white"
+              style={{ background: '#22C55E' }}
               aria-label="Call"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
