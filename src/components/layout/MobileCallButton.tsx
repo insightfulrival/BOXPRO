@@ -9,7 +9,7 @@ export default function MobileCallButton() {
   return (
     <motion.a
       href="tel:+40700000000"
-      className="fixed bottom-4 left-4 right-4 z-50 md:hidden flex items-center justify-center gap-2 bg-primary text-dark font-heading font-bold text-lg py-4 rounded-xl shadow-lg"
+      className="fixed bottom-4 left-4 right-4 z-50 md:hidden flex items-center justify-center gap-2 bg-primary text-white font-heading font-bold text-lg py-4 rounded-xl shadow-lg"
       animate={{ scale: [1, 1.02, 1] }}
       transition={{
         duration: 2,

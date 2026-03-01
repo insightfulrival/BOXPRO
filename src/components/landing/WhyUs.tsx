@@ -35,7 +35,7 @@ export default function WhyUs() {
       {/* Subtle gradient bg for section separation */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'linear-gradient(180deg, #0A0A0A 0%, #111111 50%, #0A0A0A 100%)' }}
+        style={{ background: 'linear-gradient(180deg, #FEFEFE 0%, #F9F9F8 50%, #FEFEFE 100%)' }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,24 +65,24 @@ export default function WhyUs() {
               key={benefit.key}
               variants={itemVariants}
               whileHover={{ y: -8, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-              className="group relative rounded-lg p-8 border border-white/5 hover:border-primary/30 transition-colors duration-300"
-              style={{ background: 'rgba(26, 26, 26, 0.5)' }}
+              className="group relative rounded-lg p-8 border border-foreground/8 hover:border-primary/30 transition-colors duration-300"
+              style={{ background: 'rgba(255, 255, 255, 0.7)' }}
             >
               {/* Hover glow overlay */}
               <div
                 className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ boxShadow: 'inset 0 1px 0 0 rgba(245, 166, 35, 0.1), 0 0 30px rgba(245, 166, 35, 0.06)' }}
+                style={{ boxShadow: 'inset 0 1px 0 0 rgba(74, 74, 74, 0.1), 0 0 30px rgba(74, 74, 74, 0.06)' }}
               />
 
               {/* Icon container */}
               <div
                 className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:border-primary/40 transition-colors duration-300"
-                style={{ background: 'rgba(245, 166, 35, 0.05)' }}
+                style={{ background: 'rgba(74, 74, 74, 0.06)' }}
               >
                 <benefit.icon />
               </div>
 
-              <h3 className="font-heading text-white text-lg font-bold mb-2">
+              <h3 className="font-heading text-foreground text-lg font-bold mb-2">
                 {t(benefit.key)}
               </h3>
               <p className="text-gray-medium text-sm leading-relaxed">

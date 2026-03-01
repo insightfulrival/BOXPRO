@@ -64,7 +64,7 @@ export default function ProjectsTable({ projects }: { projects: Project[] }) {
 
   if (projects.length === 0) {
     return (
-      <div className="bg-dark-lighter border border-white/10 rounded-xl p-12 text-center">
+      <div className="bg-dark-lighter border border-foreground/10 rounded-xl p-12 text-center">
         <p className="text-gray-medium">{t('noProjects')}</p>
       </div>
     );
@@ -81,13 +81,13 @@ export default function ProjectsTable({ projects }: { projects: Project[] }) {
       {/* Delete confirmation dialog */}
       {deleteId && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-          <div className="bg-dark-lighter border border-white/10 rounded-xl p-6 max-w-sm w-full">
-            <p className="text-white mb-6">{t('confirmDelete')}</p>
+          <div className="bg-dark-lighter border border-foreground/10 rounded-xl p-6 max-w-sm w-full">
+            <p className="text-foreground mb-6">{t('confirmDelete')}</p>
             <div className="flex gap-3 justify-end">
               <button
                 onClick={() => setDeleteId(null)}
                 disabled={deleting}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-medium hover:text-white border border-white/10 hover:border-white/20 transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-medium hover:text-foreground border border-foreground/10 hover:border-foreground/20 transition-colors cursor-pointer"
               >
                 {t('cancel')}
               </button>
@@ -104,10 +104,10 @@ export default function ProjectsTable({ projects }: { projects: Project[] }) {
       )}
 
       {/* Desktop Table */}
-      <div className="hidden md:block bg-dark-lighter border border-white/10 rounded-xl overflow-hidden">
+      <div className="hidden md:block bg-dark-lighter border border-foreground/10 rounded-xl overflow-hidden">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-white/10">
+            <tr className="border-b border-foreground/10">
               <th className="text-left px-6 py-4 text-sm font-medium text-gray-medium">
                 {t('titleRo')}
               </th>
@@ -127,17 +127,17 @@ export default function ProjectsTable({ projects }: { projects: Project[] }) {
           </thead>
           <tbody>
             {projects.map((project) => (
-              <tr key={project.id} className="border-b border-white/5 hover:bg-white/[0.02]">
+              <tr key={project.id} className="border-b border-foreground/5 hover:bg-foreground/[0.02]">
                 <td className="px-6 py-4">
-                  <span className="text-white font-medium">{project.title_ro}</span>
+                  <span className="text-foreground font-medium">{project.title_ro}</span>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-sm text-gray-medium bg-white/5 px-2 py-1 rounded">
+                  <span className="text-sm text-gray-medium bg-foreground/5 px-2 py-1 rounded">
                     {categoryLabels[project.category] ?? project.category}
                   </span>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-white">
+                  <span className="text-foreground">
                     {project.price != null
                       ? `${project.price.toLocaleString()} ${project.currency}`
                       : '-'}
@@ -146,7 +146,7 @@ export default function ProjectsTable({ projects }: { projects: Project[] }) {
                 <td className="px-6 py-4">
                   <span
                     className={`inline-block w-3 h-3 rounded-full ${
-                      project.featured ? 'bg-primary' : 'bg-white/10'
+                      project.featured ? 'bg-primary' : 'bg-foreground/10'
                     }`}
                   />
                 </td>
@@ -177,12 +177,12 @@ export default function ProjectsTable({ projects }: { projects: Project[] }) {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-dark-lighter border border-white/10 rounded-xl p-4"
+            className="bg-dark-lighter border border-foreground/10 rounded-xl p-4"
           >
             <div className="flex items-start justify-between mb-3">
               <div>
-                <h3 className="text-white font-medium">{project.title_ro}</h3>
-                <span className="text-xs text-gray-medium bg-white/5 px-2 py-0.5 rounded inline-block mt-1">
+                <h3 className="text-foreground font-medium">{project.title_ro}</h3>
+                <span className="text-xs text-gray-medium bg-foreground/5 px-2 py-0.5 rounded inline-block mt-1">
                   {categoryLabels[project.category] ?? project.category}
                 </span>
               </div>

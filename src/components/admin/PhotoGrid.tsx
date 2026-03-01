@@ -91,8 +91,8 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
             onClick={() => setActiveFilter(p)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
               activeFilter === p
-                ? 'bg-primary text-dark'
-                : 'bg-dark-lighter border border-white/10 text-gray-medium hover:text-white hover:border-white/20'
+                ? 'bg-primary text-white'
+                : 'bg-dark-lighter border border-foreground/10 text-gray-medium hover:text-foreground hover:border-foreground/20'
             }`}
           >
             {placementLabels[p]}
@@ -107,7 +107,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
       )}
 
       {filteredPhotos.length === 0 ? (
-        <div className="bg-dark-lighter border border-white/10 rounded-xl p-12 text-center">
+        <div className="bg-dark-lighter border border-foreground/10 rounded-xl p-12 text-center">
           <p className="text-gray-medium">{t('noPhotos')}</p>
         </div>
       ) : (
@@ -115,7 +115,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
           {filteredPhotos.map((photo) => (
             <div
               key={photo.id}
-              className="group relative bg-dark-lighter border border-white/10 rounded-xl overflow-hidden aspect-square"
+              className="group relative bg-dark-lighter border border-foreground/10 rounded-xl overflow-hidden aspect-square"
             >
               <Image
                 src={photo.url}
@@ -129,7 +129,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors flex flex-col justify-between p-3 opacity-0 group-hover:opacity-100 transition-opacity">
                 {/* Top: placement badge + project name */}
                 <div className="flex flex-wrap gap-1">
-                  <span className="text-[10px] font-medium bg-primary/90 text-dark px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-medium bg-primary/90 text-white px-2 py-0.5 rounded">
                     {placementLabels[photo.placement]}
                   </span>
                   {photo.projects && (

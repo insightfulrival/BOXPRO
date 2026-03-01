@@ -17,7 +17,7 @@ export default function HowItWorks() {
       {/* Background */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'linear-gradient(180deg, #0A0A0A 0%, #111111 50%, #0A0A0A 100%)' }}
+        style={{ background: 'linear-gradient(180deg, #FEFEFE 0%, #F9F9F8 50%, #FEFEFE 100%)' }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +39,7 @@ export default function HowItWorks() {
           {/* Connecting line on desktop */}
           <div
             className="hidden md:block absolute h-px left-[16.67%] right-[16.67%]"
-            style={{ top: '40px', background: 'rgba(255, 255, 255, 0.06)' }}
+            style={{ top: '40px', background: 'rgba(44, 36, 24, 0.1)' }}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
@@ -56,9 +56,9 @@ export default function HowItWorks() {
                 <motion.div
                   className="relative z-10 w-20 h-20 rounded-full mx-auto mb-8 flex items-center justify-center"
                   style={{
-                    background: '#0F0F0F',
-                    border: '2px solid rgba(245, 166, 35, 0.25)',
-                    boxShadow: '0 0 25px rgba(245, 166, 35, 0.08)',
+                    background: '#FFFFFF',
+                    border: '2px solid rgba(74, 74, 74, 0.25)',
+                    boxShadow: '0 0 25px rgba(74, 74, 74, 0.08)',
                   }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -73,7 +73,7 @@ export default function HowItWorks() {
                   <span className="text-primary font-heading text-xl font-bold">{step.num}</span>
                 </motion.div>
 
-                <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-3">
+                <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-3">
                   {t(step.key)}
                 </h3>
                 <p className="text-gray-medium text-sm leading-relaxed max-w-xs mx-auto">

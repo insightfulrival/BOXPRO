@@ -36,7 +36,7 @@ export default function AdminSidebar() {
       {/* Mobile hamburger button */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-dark-lighter border border-white/10 rounded-lg text-white cursor-pointer"
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-dark-lighter border border-foreground/10 rounded-lg text-foreground cursor-pointer"
         aria-label="Toggle menu"
       >
         {mobileOpen ? (
@@ -60,12 +60,12 @@ export default function AdminSidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-dark-lighter border-r border-white/10 z-40 flex flex-col transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-64 bg-dark-lighter border-r border-foreground/10 z-40 flex flex-col transition-transform duration-300 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`}
       >
         {/* Logo */}
-        <div className="p-6 border-b border-white/10">
+        <div className="p-6 border-b border-foreground/10">
           <div className="flex items-center gap-3">
             <Image
               src="/logo.png"
@@ -90,7 +90,7 @@ export default function AdminSidebar() {
               className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                 isActive(link.href)
                   ? 'bg-primary/10 text-primary'
-                  : 'text-gray-medium hover:text-white hover:bg-white/5'
+                  : 'text-gray-medium hover:text-foreground hover:bg-foreground/5'
               }`}
             >
               <link.icon active={isActive(link.href)} />
@@ -100,7 +100,7 @@ export default function AdminSidebar() {
         </nav>
 
         {/* Sign out */}
-        <div className="p-4 border-t border-white/10">
+        <div className="p-4 border-t border-foreground/10">
           <button
             onClick={handleSignOut}
             className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-medium hover:text-red-400 hover:bg-red-400/5 transition-colors w-full cursor-pointer"

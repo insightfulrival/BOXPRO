@@ -33,7 +33,7 @@ export default function Stats() {
   const t = useTranslations('stats');
 
   return (
-    <section className="py-16 md:py-20 border-y border-white/5" style={{ background: '#0F0F0F' }}>
+    <section className="py-16 md:py-20 border-y border-foreground/8" style={{ background: '#F9F9F8' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, i) => (

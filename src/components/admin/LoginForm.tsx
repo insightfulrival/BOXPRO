@@ -50,7 +50,7 @@ export default function LoginForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-3 bg-dark-lighter border border-white/10 rounded-lg text-white placeholder-gray-medium focus:outline-none focus:border-primary transition-colors"
+          className="w-full px-4 py-3 bg-dark border border-foreground/10 rounded-lg text-foreground placeholder-gray-medium focus:outline-none focus:border-primary transition-colors"
           placeholder="admin@boxpro.ro"
         />
       </div>
@@ -65,7 +65,7 @@ export default function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full px-4 py-3 bg-dark-lighter border border-white/10 rounded-lg text-white placeholder-gray-medium focus:outline-none focus:border-primary transition-colors"
+          className="w-full px-4 py-3 bg-dark border border-foreground/10 rounded-lg text-foreground placeholder-gray-medium focus:outline-none focus:border-primary transition-colors"
           placeholder="••••••••"
         />
       </div>
@@ -79,7 +79,7 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-primary text-dark font-bold py-3 rounded-lg font-heading text-sm uppercase tracking-wider hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+        className="w-full bg-primary text-white font-bold py-3 rounded-lg font-heading text-sm uppercase tracking-wider hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
       >
         {loading ? '...' : t('signIn')}
       </button>

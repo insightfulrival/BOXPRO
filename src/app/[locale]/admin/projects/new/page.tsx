@@ -16,7 +16,7 @@ export default async function NewProjectPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-heading font-bold text-white mb-8">
+      <h1 className="text-2xl font-heading font-bold text-foreground mb-8">
         {t('addProject')}
       </h1>
       <ProjectForm />

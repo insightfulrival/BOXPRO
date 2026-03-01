@@ -22,12 +22,12 @@ export default async function AdminProjectsPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-heading font-bold text-white">
+        <h1 className="text-2xl font-heading font-bold text-foreground">
           {t('projects')}
         </h1>
         <Link
           href="/admin/projects/new"
-          className="inline-flex items-center gap-2 bg-primary text-dark font-bold px-4 py-2 rounded-lg font-heading text-sm uppercase tracking-wider hover:bg-primary-dark transition-colors"
+          className="inline-flex items-center gap-2 bg-primary text-white font-bold px-4 py-2 rounded-lg font-heading text-sm uppercase tracking-wider hover:bg-primary-dark transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

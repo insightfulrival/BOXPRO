@@ -128,11 +128,11 @@ export default function PhotoUpload({ projects }: PhotoUploadProps) {
   };
 
   const inputClasses =
-    'w-full px-4 py-3 bg-dark-lighter border border-white/10 rounded-lg text-white focus:outline-none focus:border-primary transition-colors';
+    'w-full px-4 py-3 bg-dark-lighter border border-foreground/10 rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors';
 
   return (
-    <div className="bg-dark-lighter border border-white/10 rounded-xl p-6">
-      <h2 className="text-lg font-heading font-semibold text-white mb-4">
+    <div className="bg-dark-lighter border border-foreground/10 rounded-xl p-6">
+      <h2 className="text-lg font-heading font-semibold text-foreground mb-4">
         {t('uploadPhotos')}
       </h2>
 
@@ -190,7 +190,7 @@ export default function PhotoUpload({ projects }: PhotoUploadProps) {
         className={`relative border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-colors ${
           dragOver
             ? 'border-primary bg-primary/5'
-            : 'border-white/10 hover:border-white/20'
+            : 'border-foreground/10 hover:border-foreground/20'
         } ${uploading ? 'pointer-events-none opacity-60' : ''}`}
       >
         <input
@@ -217,7 +217,7 @@ export default function PhotoUpload({ projects }: PhotoUploadProps) {
         {/* Progress bar */}
         {uploading && progress > 0 && (
           <div className="mt-4 w-full max-w-xs mx-auto">
-            <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-foreground/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-primary rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}

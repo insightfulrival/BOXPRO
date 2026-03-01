@@ -30,11 +30,11 @@ export default function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(245,166,35,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(245,166,35,0.03) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(74,74,74,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(74,74,74,0.06) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #0A0A0A 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 60%, #FEFEFE 100%)' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-20 md:pb-28">
@@ -51,7 +51,7 @@ export default function Hero() {
                 <motion.span
                   key={i}
                   className={`inline-block mr-[0.3em] ${
-                    i === 0 ? 'text-primary' : 'text-white'
+                    i === 0 ? 'text-primary' : 'text-foreground'
                   }`}
                   initial={{ opacity: 0, y: 60 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -107,11 +107,11 @@ export default function Hero() {
               style={{
                 padding: '2px',
                 borderRadius: '20px',
-                background: 'linear-gradient(180deg, rgba(245,166,35,0.7) 0%, rgba(245,166,35,0.2) 40%, rgba(245,166,35,0.2) 60%, rgba(245,166,35,0.7) 100%)',
-                boxShadow: '0 0 20px rgba(245,166,35,0.4), 0 0 50px rgba(245,166,35,0.2), 0 0 100px rgba(245,166,35,0.1)',
+                background: 'linear-gradient(180deg, rgba(74,74,74,0.5) 0%, rgba(74,74,74,0.15) 40%, rgba(74,74,74,0.15) 60%, rgba(74,74,74,0.5) 100%)',
+                boxShadow: '0 0 20px rgba(74,74,74,0.2), 0 0 50px rgba(74,74,74,0.1), 0 0 100px rgba(74,74,74,0.05)',
               }}
             >
-              <div style={{ borderRadius: '18px', overflow: 'hidden', background: '#0A0A0A' }}>
+              <div style={{ borderRadius: '18px', overflow: 'hidden', background: '#F8F8F7' }}>
                 <div className="aspect-video relative">
                   <video
                     ref={videoRef}
@@ -128,12 +128,12 @@ export default function Hero() {
                   />
                 </div>
                 {/* Progress bar */}
-                <div style={{ height: '3px', background: 'rgba(255,255,255,0.05)' }}>
+                <div style={{ height: '3px', background: 'rgba(44,36,24,0.08)' }}>
                   <div
                     style={{
                       height: '100%',
                       width: `${progress}%`,
-                      background: 'linear-gradient(90deg, #F5A623, #D4901E)',
+                      background: 'linear-gradient(90deg, #4A4A4A, #363636)',
                       transition: 'width 0.3s linear',
                     }}
                   />

@@ -108,7 +108,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
   };
 
   const inputClasses =
-    'w-full px-4 py-3 bg-dark-lighter border border-white/10 rounded-lg text-white placeholder-gray-medium focus:outline-none focus:border-primary transition-colors';
+    'w-full px-4 py-3 bg-dark-lighter border border-foreground/10 rounded-lg text-foreground placeholder-gray-medium focus:outline-none focus:border-primary transition-colors';
 
   const labelClasses = 'block text-sm font-medium text-gray-medium mb-2';
 
@@ -261,7 +261,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
           type="checkbox"
           checked={formData.featured}
           onChange={handleChange}
-          className="w-4 h-4 rounded border-white/10 bg-dark-lighter text-primary focus:ring-primary accent-primary"
+          className="w-4 h-4 rounded border-foreground/10 bg-dark-lighter text-primary focus:ring-primary accent-primary"
         />
         <label htmlFor="featured" className="text-sm font-medium text-gray-medium">
           {t('featured')}
@@ -273,14 +273,14 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
         <button
           type="submit"
           disabled={saving}
-          className="bg-primary text-dark font-bold px-6 py-3 rounded-lg font-heading text-sm uppercase tracking-wider hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          className="bg-primary text-white font-bold px-6 py-3 rounded-lg font-heading text-sm uppercase tracking-wider hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
           {saving ? t('saving') : t('save')}
         </button>
         <button
           type="button"
           onClick={() => router.push('/admin/projects')}
-          className="px-6 py-3 rounded-lg text-sm font-medium text-gray-medium border border-white/10 hover:border-white/20 hover:text-white transition-colors cursor-pointer"
+          className="px-6 py-3 rounded-lg text-sm font-medium text-gray-medium border border-foreground/10 hover:border-foreground/20 hover:text-foreground transition-colors cursor-pointer"
         >
           {t('cancel')}
         </button>

@@ -8,7 +8,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5" style={{ background: '#080808' }}>
+    <footer className="border-t border-foreground/8" style={{ background: '#F5F5F4' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-heading text-white font-bold text-sm uppercase tracking-[0.15em] mb-4">
+            <h4 className="font-heading text-foreground font-bold text-sm uppercase tracking-[0.15em] mb-4">
               {t('navigation')}
             </h4>
             <div className="flex flex-col gap-3">
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-white font-bold text-sm uppercase tracking-[0.15em] mb-4">
+            <h4 className="font-heading text-foreground font-bold text-sm uppercase tracking-[0.15em] mb-4">
               {t('contact')}
             </h4>
             <div className="flex flex-col gap-3">
@@ -64,8 +64,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="py-6 border-t border-white/5 text-center">
-          <p className="text-xs" style={{ color: 'rgba(136, 136, 136, 0.5)' }}>
+        <div className="py-6 border-t border-foreground/8 text-center">
+          <p className="text-xs" style={{ color: 'rgba(140, 130, 121, 0.6)' }}>
             &copy; {year} BOXPRO. {t('rights')}.
           </p>
         </div>

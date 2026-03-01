@@ -59,13 +59,13 @@ export default function Offers() {
               key={cat.key}
               variants={itemVariants}
               whileHover={{ y: -6, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-              className="group relative rounded-lg border border-white/5 hover:border-primary/20 transition-all duration-300 overflow-hidden cursor-pointer"
-              style={{ background: 'rgba(26, 26, 26, 0.5)' }}
+              className="group relative rounded-lg border border-foreground/8 hover:border-primary/30 transition-all duration-300 overflow-hidden cursor-pointer"
+              style={{ background: 'rgba(255, 255, 255, 0.7)' }}
             >
               {/* Large decorative number */}
               <div
                 className="absolute -top-2 right-4 font-heading text-[80px] md:text-[100px] font-bold leading-none select-none pointer-events-none transition-colors duration-500"
-                style={{ color: 'rgba(245, 166, 35, 0.04)' }}
+                style={{ color: 'rgba(74, 74, 74, 0.06)' }}
               >
                 {cat.num}
               </div>
@@ -74,12 +74,12 @@ export default function Offers() {
               <div className="relative z-10 p-8 flex items-start gap-5">
                 <div
                   className="w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center border border-primary/20 group-hover:border-primary/40 transition-colors duration-300"
-                  style={{ background: 'rgba(245, 166, 35, 0.05)' }}
+                  style={{ background: 'rgba(74, 74, 74, 0.06)' }}
                 >
                   <cat.icon />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-2">
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">
                     {t(cat.key)}
                   </h3>
                   <p className="text-gray-medium text-sm leading-relaxed">

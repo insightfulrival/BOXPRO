@@ -83,7 +83,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
       </div>
 
       <div className="p-4">
-        <h3 className="font-heading text-lg text-white">{title}</h3>
+        <h3 className="font-heading text-lg text-foreground">{title}</h3>
         {project.price && (
           <p className="text-primary font-bold mt-1">
             {t('from')} {project.price.toLocaleString(locale === 'ro' ? 'ro-RO' : 'en-US')}{' '}

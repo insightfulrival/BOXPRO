@@ -39,8 +39,8 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
             onClick={() => setActiveFilter(key)}
             className={`px-5 py-2 rounded-full font-heading text-sm font-bold transition-colors cursor-pointer ${
               activeFilter === key
-                ? 'bg-primary text-dark'
-                : 'bg-dark-lighter text-gray-medium hover:text-white border border-white/10'
+                ? 'bg-primary text-white'
+                : 'bg-dark-lighter text-gray-medium hover:text-foreground border border-foreground/10'
             }`}
           >
             {t(key)}

@@ -51,7 +51,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-foreground/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-22">
           {/* Logo */}
@@ -72,7 +72,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-3">
             <a
               href="tel:+40700000000"
-              className="p-2 rounded-lg bg-primary text-dark"
+              className="p-2 rounded-lg bg-primary text-white"
               aria-label="Call"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -126,15 +126,15 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
             <motion.span
-              className="block w-6 h-0.5 bg-white"
+              className="block w-6 h-0.5 bg-foreground"
               animate={mobileOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
             />
             <motion.span
-              className="block w-6 h-0.5 bg-white"
+              className="block w-6 h-0.5 bg-foreground"
               animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
             />
             <motion.span
-              className="block w-6 h-0.5 bg-white"
+              className="block w-6 h-0.5 bg-foreground"
               animate={mobileOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
             />
             </button>
@@ -146,7 +146,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="md:hidden bg-dark/95 backdrop-blur-md border-t border-white/10"
+            className="md:hidden bg-dark/95 backdrop-blur-md border-t border-foreground/10"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -157,7 +157,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white hover:text-primary transition-colors text-lg font-medium"
+                  className="text-foreground hover:text-primary transition-colors text-lg font-medium"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

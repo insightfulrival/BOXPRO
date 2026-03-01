@@ -71,7 +71,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         >
           {/* Backdrop */}
           <motion.div
-            className="absolute inset-0 bg-dark/90 backdrop-blur-md"
+            className="absolute inset-0 bg-black/50 backdrop-blur-md"
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -80,7 +80,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Modal content */}
           <motion.div
-            className="relative z-10 bg-dark-lighter rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col"
+            className="relative z-10 bg-dark-lighter rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -89,7 +89,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-20 w-10 h-10 bg-dark/80 rounded-full flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
+              className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
               aria-label={t('close')}
             >
               <svg
@@ -107,7 +107,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </button>
 
             {/* Image carousel */}
-            <div className="relative aspect-[16/10] bg-dark">
+            <div className="relative aspect-[16/10] bg-dark-lighter">
               {photos.length > 0 ? (
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -140,7 +140,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <>
                   <button
                     onClick={goPrev}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-dark/70 rounded-full flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
                     aria-label={t('prev')}
                   >
                     <svg
@@ -158,7 +158,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </button>
                   <button
                     onClick={goNext}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-dark/70 rounded-full flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:text-primary transition-colors cursor-pointer"
                     aria-label={t('next')}
                   >
                     <svg
@@ -182,7 +182,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                         key={idx}
                         onClick={() => setCurrentPhoto(idx)}
                         className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
-                          idx === currentPhoto ? 'bg-primary' : 'bg-white/50'
+                          idx === currentPhoto ? 'bg-primary' : 'bg-foreground/30'
                         }`}
                         aria-label={`Photo ${idx + 1}`}
                       />
@@ -194,7 +194,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* Info */}
             <div className="p-6 overflow-y-auto">
-              <h2 className="font-heading text-2xl font-bold text-white">
+              <h2 className="font-heading text-2xl font-bold text-foreground">
                 {title}
               </h2>
 
