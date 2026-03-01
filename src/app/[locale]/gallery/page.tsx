@@ -70,26 +70,95 @@ export default async function GalleryPage() {
   const t = await getTranslations('gallery');
   const projects = await fetchAllProjects();
 
-  // Placeholder projects when Supabase is not configured
-  const placeholders: Project[] =
-    projects.length > 0
-      ? []
-      : Array.from({ length: 6 }, (_, i) => {
-          const categories = ['housing', 'offices', 'storage', 'custom'];
-          return {
-            id: `placeholder-${i}`,
-            title_ro: `Proiect Demo ${i + 1}`,
-            title_en: `Demo Project ${i + 1}`,
-            description_ro: 'Acesta este un proiect demonstrativ.',
-            description_en: 'This is a demo project.',
-            category: categories[i % categories.length],
-            price: 12000 + i * 3000,
-            currency: 'EUR',
-            photos: [],
-          };
-        });
+  // Static projects with local gallery images
+  const staticProjects: Project[] = [
+    {
+      id: 'static-1',
+      title_ro: 'Container Locuinta Moderna',
+      title_en: 'Modern Housing Container',
+      description_ro: 'Container modular transformat intr-o locuinta moderna cu toate facilitatile necesare.',
+      description_en: 'Modular container transformed into a modern home with all necessary amenities.',
+      category: 'housing',
+      photos: [
+        { id: 's1-1', url: '/gallery/boxpro-01.jpg', alt: 'Container locuinta BOXPRO' },
+        { id: 's1-2', url: '/gallery/boxpro-02.jpg', alt: 'Container locuinta BOXPRO' },
+        { id: 's1-3', url: '/gallery/boxpro-03.jpg', alt: 'Container locuinta BOXPRO' },
+        { id: 's1-4', url: '/gallery/boxpro-04.jpg', alt: 'Container locuinta BOXPRO' },
+      ],
+    },
+    {
+      id: 'static-2',
+      title_ro: 'Birou Modular Profesional',
+      title_en: 'Professional Modular Office',
+      description_ro: 'Spatiu de lucru profesional, complet echipat si gata de utilizare.',
+      description_en: 'Professional workspace, fully equipped and ready to use.',
+      category: 'offices',
+      photos: [
+        { id: 's2-1', url: '/gallery/boxpro-05.jpg', alt: 'Birou modular BOXPRO' },
+        { id: 's2-2', url: '/gallery/boxpro-06.jpg', alt: 'Birou modular BOXPRO' },
+        { id: 's2-3', url: '/gallery/boxpro-07.jpg', alt: 'Birou modular BOXPRO' },
+        { id: 's2-4', url: '/gallery/boxpro-08.jpg', alt: 'Birou modular BOXPRO' },
+      ],
+    },
+    {
+      id: 'static-3',
+      title_ro: 'Depozit Container',
+      title_en: 'Container Storage',
+      description_ro: 'Solutie de depozitare sigura si durabila, ideala pentru diverse utilizari.',
+      description_en: 'Secure and durable storage solution, ideal for various uses.',
+      category: 'storage',
+      photos: [
+        { id: 's3-1', url: '/gallery/boxpro-09.jpg', alt: 'Depozit container BOXPRO' },
+        { id: 's3-2', url: '/gallery/boxpro-10.jpg', alt: 'Depozit container BOXPRO' },
+        { id: 's3-3', url: '/gallery/boxpro-11.jpg', alt: 'Depozit container BOXPRO' },
+        { id: 's3-4', url: '/gallery/boxpro-12.jpg', alt: 'Depozit container BOXPRO' },
+      ],
+    },
+    {
+      id: 'static-4',
+      title_ro: 'Proiect Custom',
+      title_en: 'Custom Project',
+      description_ro: 'Proiect unic, realizat conform specificatiilor clientului.',
+      description_en: 'Unique project, built according to client specifications.',
+      category: 'custom',
+      photos: [
+        { id: 's4-1', url: '/gallery/boxpro-13.jpg', alt: 'Proiect custom BOXPRO' },
+        { id: 's4-2', url: '/gallery/boxpro-14.jpg', alt: 'Proiect custom BOXPRO' },
+        { id: 's4-3', url: '/gallery/boxpro-15.jpg', alt: 'Proiect custom BOXPRO' },
+        { id: 's4-4', url: '/gallery/boxpro-16.jpg', alt: 'Proiect custom BOXPRO' },
+        { id: 's4-5', url: '/gallery/boxpro-17.jpg', alt: 'Proiect custom BOXPRO' },
+      ],
+    },
+    {
+      id: 'static-5',
+      title_ro: 'Casa Container Premium',
+      title_en: 'Premium Container House',
+      description_ro: 'Locuinta premium din container modular cu finisaje de inalta calitate.',
+      description_en: 'Premium modular container home with high-quality finishes.',
+      category: 'housing',
+      photos: [
+        { id: 's5-1', url: '/gallery/boxpro-18.jpg', alt: 'Casa container premium BOXPRO' },
+        { id: 's5-2', url: '/gallery/boxpro-19.jpg', alt: 'Casa container premium BOXPRO' },
+        { id: 's5-3', url: '/gallery/boxpro-20.jpg', alt: 'Casa container premium BOXPRO' },
+        { id: 's5-4', url: '/gallery/boxpro-21.jpg', alt: 'Casa container premium BOXPRO' },
+      ],
+    },
+    {
+      id: 'static-6',
+      title_ro: 'Container Multifunctional',
+      title_en: 'Multifunctional Container',
+      description_ro: 'Container versatil adaptat pentru multiple utilizari.',
+      description_en: 'Versatile container adapted for multiple uses.',
+      category: 'custom',
+      photos: [
+        { id: 's6-1', url: '/gallery/boxpro-22.jpg', alt: 'Container multifunctional BOXPRO' },
+        { id: 's6-2', url: '/gallery/boxpro-23.jpg', alt: 'Container multifunctional BOXPRO' },
+        { id: 's6-3', url: '/gallery/boxpro-24.jpg', alt: 'Container multifunctional BOXPRO' },
+      ],
+    },
+  ];
 
-  const displayProjects = projects.length > 0 ? projects : placeholders;
+  const displayProjects = projects.length > 0 ? projects : staticProjects;
 
   return (
     <>
