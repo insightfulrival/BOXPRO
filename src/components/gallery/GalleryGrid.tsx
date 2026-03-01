@@ -1,19 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import ProjectCard, { type Project } from '@/components/ui/ProjectCard';
+import Image from 'next/image';
+import type { Project } from '@/components/ui/ProjectCard';
 import ProjectModal from './ProjectModal';
 
 const filterKeys = ['all', 'housing', 'offices', 'storage', 'custom'] as const;
 
-const categoryMap: Record<string, string> = {
-  housing: 'housing',
-  offices: 'offices',
-  storage: 'storage',
-  custom: 'custom',
-};
+interface PhotoWithProject {
+  photoId: string;
+  url: string;
+  alt: string;
+  photoIndex: number;
+  project: Project;
+}
 
 interface GalleryGridProps {
   projects: Project[];
@@ -24,10 +26,38 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const t = useTranslations('gallery');
 
-  const filtered =
-    activeFilter === 'all'
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+  // Flatten all photos from all projects into a single list
+  const allPhotos = useMemo(() => {
+    const filtered =
+      activeFilter === 'all'
+        ? projects
+        : projects.filter((p) => p.category === activeFilter);
+
+    const photos: PhotoWithProject[] = [];
+    for (const project of filtered) {
+      if (!project.photos) continue;
+      project.photos.forEach((photo, index) => {
+        photos.push({
+          photoId: photo.id,
+          url: photo.url,
+          alt: photo.alt || '',
+          photoIndex: index,
+          project,
+        });
+      });
+    }
+    return photos;
+  }, [projects, activeFilter]);
+
+  function handlePhotoClick(item: PhotoWithProject) {
+    // Reorder photos so the clicked one is first
+    const photos = item.project.photos || [];
+    const reordered = [
+      ...photos.slice(item.photoIndex),
+      ...photos.slice(0, item.photoIndex),
+    ];
+    setSelectedProject({ ...item.project, photos: reordered });
+  }
 
   return (
     <>
@@ -48,26 +78,33 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
         ))}
       </div>
 
-      {/* Grid */}
-      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" layout>
+      {/* Photo grid - phone gallery style */}
+      <div className="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-8 lg:grid-cols-10 gap-1 sm:gap-1.5">
         <AnimatePresence mode="popLayout">
-          {filtered.map((project) => (
+          {allPhotos.map((item) => (
             <motion.div
-              key={project.id}
+              key={item.photoId}
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative aspect-square overflow-hidden rounded-md cursor-pointer"
+              whileHover={{ scale: 1.05, zIndex: 10 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => handlePhotoClick(item)}
             >
-              <ProjectCard
-                project={project}
-                onClick={() => setSelectedProject(project)}
+              <Image
+                src={item.url}
+                alt={item.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 20vw, (max-width: 768px) 14vw, (max-width: 1024px) 12vw, 10vw"
               />
             </motion.div>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </div>
 
       {/* Modal */}
       <ProjectModal
