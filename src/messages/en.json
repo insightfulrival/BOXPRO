@@ -28,7 +28,8 @@
     "custom": "100% Customizable",
     "customDesc": "Tailored exactly to your needs",
     "price": "Competitive Price",
-    "priceDesc": "Affordable solutions without compromise"
+    "priceDesc": "Affordable solutions without compromise",
+    "viewMore": "View More"
   },
   "stats": {
     "projectsLabel": "Projects Completed",

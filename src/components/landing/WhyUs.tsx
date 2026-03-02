@@ -2,6 +2,8 @@
 
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 
 const containerVariants = {
   hidden: {},
@@ -90,6 +92,43 @@ export default function WhyUs() {
               </p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* 3x3 Photo grid */}
+        <motion.div
+          className="grid grid-cols-3 gap-2 sm:gap-3 mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+            <div key={n} className="relative aspect-square rounded-lg overflow-hidden">
+              <Image
+                src={`/gallery/boxpro-${String(n).padStart(2, '0')}.jpg`}
+                alt={`BOXPRO container ${n}`}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 33vw, 25vw"
+              />
+            </div>
+          ))}
+        </motion.div>
+
+        {/* View more button */}
+        <motion.div
+          className="text-center mt-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <Link
+            href="/gallery"
+            className="inline-block px-8 py-3 bg-primary text-white font-heading text-sm font-bold uppercase tracking-wider rounded-lg hover:bg-primary-dark transition-colors"
+          >
+            {t('viewMore')}
+          </Link>
         </motion.div>
       </div>
     </section>
