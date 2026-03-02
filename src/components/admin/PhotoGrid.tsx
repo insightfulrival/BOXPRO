@@ -11,6 +11,7 @@ interface Photo {
   url: string;
   alt_ro: string;
   alt_en: string;
+  type: 'image' | 'video';
   placement: string;
   order_index: number;
   project_id: string | null;
@@ -117,13 +118,31 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
               key={photo.id}
               className="group relative bg-dark-lighter border border-foreground/10 rounded-xl overflow-hidden aspect-square"
             >
-              <Image
-                src={photo.url}
-                alt={photo.alt_ro || 'Photo'}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              />
+              {photo.type === 'video' ? (
+                <>
+                  <video
+                    src={photo.url}
+                    muted
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-foreground ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Image
+                  src={photo.url}
+                  alt={photo.alt_ro || 'Photo'}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              )}
 
               {/* Overlay with info and delete */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors flex flex-col justify-between p-3 opacity-0 group-hover:opacity-100 transition-opacity">

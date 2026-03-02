@@ -106,7 +106,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </svg>
             </button>
 
-            {/* Image carousel */}
+            {/* Image/Video carousel */}
             <div className="relative aspect-[16/10] bg-dark-lighter">
               {photos.length > 0 ? (
                 <AnimatePresence mode="wait">
@@ -118,13 +118,22 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Image
-                      src={photos[currentPhoto].url}
-                      alt={photos[currentPhoto].alt || title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 896px"
-                    />
+                    {photos[currentPhoto].type === 'video' ? (
+                      <video
+                        src={photos[currentPhoto].url}
+                        controls
+                        autoPlay
+                        className="w-full h-full object-contain bg-black"
+                      />
+                    ) : (
+                      <Image
+                        src={photos[currentPhoto].url}
+                        alt={photos[currentPhoto].alt || title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 896px"
+                      />
+                    )}
                   </motion.div>
                 </AnimatePresence>
               ) : (

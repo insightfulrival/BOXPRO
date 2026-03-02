@@ -8,6 +8,7 @@ interface Photo {
   id: string;
   url: string;
   alt?: string;
+  type?: 'image' | 'video';
 }
 
 export interface Project {

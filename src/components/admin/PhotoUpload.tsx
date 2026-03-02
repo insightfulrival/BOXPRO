@@ -62,9 +62,11 @@ export default function PhotoUpload({ projects }: PhotoUploadProps) {
       setProgress(80);
 
       // Insert record into photos table
+      const isVideo = file.type.startsWith('video/');
       const insertData: Record<string, unknown> = {
         url: publicUrlData.publicUrl,
         placement,
+        type: isVideo ? 'video' : 'image',
         order_index: 0,
       };
 
@@ -196,7 +198,7 @@ export default function PhotoUpload({ projects }: PhotoUploadProps) {
         <input
           ref={fileInputRef}
           type="file"
-          accept="image/*"
+          accept="image/*,video/*"
           onChange={handleFileChange}
           className="hidden"
         />

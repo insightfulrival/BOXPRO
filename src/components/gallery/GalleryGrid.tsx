@@ -13,6 +13,7 @@ interface PhotoWithProject {
   photoId: string;
   url: string;
   alt: string;
+  type: 'image' | 'video';
   photoIndex: number;
   project: Project;
 }
@@ -41,6 +42,7 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
           photoId: photo.id,
           url: photo.url,
           alt: photo.alt || '',
+          type: photo.type || 'image',
           photoIndex: index,
           project,
         });
@@ -94,13 +96,32 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
               whileTap={{ scale: 0.97 }}
               onClick={() => handlePhotoClick(item)}
             >
-              <Image
-                src={item.url}
-                alt={item.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 20vw, (max-width: 768px) 14vw, (max-width: 1024px) 12vw, 10vw"
-              />
+              {item.type === 'video' ? (
+                <>
+                  <video
+                    src={item.url}
+                    muted
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Play icon overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-foreground ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Image
+                  src={item.url}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 20vw, (max-width: 768px) 14vw, (max-width: 1024px) 12vw, 10vw"
+                />
+              )}
             </motion.div>
           ))}
         </AnimatePresence>
